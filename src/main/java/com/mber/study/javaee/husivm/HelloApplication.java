@@ -1,4 +1,4 @@
-package com.mber.mber.study.javaee.husivm;
+package com.mber.study.javaee.husivm;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
