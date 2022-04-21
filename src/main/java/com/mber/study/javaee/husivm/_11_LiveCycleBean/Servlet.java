@@ -30,12 +30,12 @@ class LiveCycleBean {
     }
 
     @PostConstruct
-    public void postConstruct(){
-        System.out.println("postConstruct");        // 2
+    private void postConstruct(){
+        System.out.println("after construct");      // 2
     }
 
     @AroundInvoke
-    public Object aroundInvoke(InvocationContext context) throws Exception {
+    private Object aroundInvoke(InvocationContext context) throws Exception {
         System.out.println("before method");        // 3, 5
         return context.proceed();
     }
@@ -49,7 +49,7 @@ class LiveCycleBean {
     }
 
     @PreDestroy
-    public void preDestroy(){
-        System.out.println("preDestroy");           // 7
+    private void preDestroy(){
+        System.out.println("before destroy");        // 7
     }
 }
