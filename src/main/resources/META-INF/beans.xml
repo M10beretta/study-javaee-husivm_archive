@@ -6,9 +6,13 @@
        bean-discovery-mode="all">
 
     <interceptors>
-        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorOne</class>
-        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorTwo</class>
-        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorThree</class>
-        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorFour</class>
+<!--        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorOne</class>-->
+<!--        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorTwo</class>-->
+<!--        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorThree</class>-->
+<!--        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorFour</class>-->
     </interceptors>
+    <decorators>
+        <class>com.mber.study.javaee.husivm._15_Decorator.MyDecorator</class>
+    </decorators>
+
 </beans>

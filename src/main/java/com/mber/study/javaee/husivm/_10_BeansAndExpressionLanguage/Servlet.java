@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Не работает с jsp если разместить MyBean.class в этом же файле, т.к. для jsp класс бина должен быть public
+ */
 @WebServlet("10")
 public class Servlet extends HttpServlet {
     @Inject
@@ -15,9 +18,11 @@ public class Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        var dispatcher = req.getRequestDispatcher("/jsp/index_10.jsp");
+        var dispatcher = req.getRequestDispatcher("/10/index.jsp");
         dispatcher.forward(req, resp);
     }
 }
+
+
 
 

@@ -12,21 +12,20 @@ import java.io.Serializable;
 @WebServlet("9")
 public class Servlet extends HttpServlet {
     @Inject
-    private ConversationBean conversationBean;
+    private ConversationBean bean;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        System.out.println(conversationBean.state + "    : out");//    null : out       -1
-        conversationBean.state = "1 (out)";
-        conversationBean.startConversation();
-        System.out.println(conversationBean.state + " : out");   // 1 (out) : out       -4
+        System.out.println(bean.state + "    : out");//    null : out       -1
+        bean.state = "1 (out)";
+        bean.startConversation();
+        System.out.println(bean.state + " : out");   // 1 (out) : out       -4
         System.out.println("middle conversation");               // middle conversation -5
-        conversationBean.doJob();
-        conversationBean.state = "2 (out)";
-        conversationBean.endConversation();
-        System.out.println(conversationBean.state + " : out");   // 2 (out) : out       -9
-        conversationBean.doJob();
-
+        bean.doJob();
+        bean.state = "2 (out)";
+        bean.endConversation();
+        System.out.println(bean.state + " : out");   // 2 (out) : out       -9
+        bean.doJob();
     }
 }
 
