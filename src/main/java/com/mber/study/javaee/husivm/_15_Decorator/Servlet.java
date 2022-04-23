@@ -30,6 +30,9 @@ class Child implements Parent {
     }
 }
 
+/**
+ * Добавить информацию в beans.xml <br>{@code <decorators><class> <class></decorators>}
+ */
 @Decorator
 class MyDecorator implements Parent {
     @Inject @Delegate

@@ -18,9 +18,6 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 
-/**
- * дополнительно добавить информацию в beans.xml
- */
 @WebServlet("14")
 public class Servlet extends HttpServlet {
     @Inject
@@ -54,6 +51,9 @@ class InterceptorService {
 
 }
 
+/**
+ * Добавить информацию в beans.xml <br>{@code <interceptors><class> <class></interceptors>}
+ */
 @Interceptor
 @First
 class InterceptorOne {
