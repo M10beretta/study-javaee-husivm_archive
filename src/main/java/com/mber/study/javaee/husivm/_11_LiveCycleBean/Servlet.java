@@ -5,19 +5,18 @@ import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.InvocationContext;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-@WebServlet("/11")
+@WebServlet("11")
 public class Servlet extends HttpServlet {
     @Inject
     private LiveCycleBean liveCycleBean;
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         liveCycleBean.method1();
         liveCycleBean.method2();
     }
@@ -30,7 +29,7 @@ class LiveCycleBean {
     }
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         System.out.println("after construct");      // 2
     }
 
@@ -49,7 +48,7 @@ class LiveCycleBean {
     }
 
     @PreDestroy
-    private void preDestroy(){
+    private void preDestroy() {
         System.out.println("before destroy");        // 7
     }
 }

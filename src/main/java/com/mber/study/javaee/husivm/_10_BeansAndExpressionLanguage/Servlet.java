@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/10")
+@WebServlet("10")
 public class Servlet extends HttpServlet {
     @Inject
     private MyBean myBean;

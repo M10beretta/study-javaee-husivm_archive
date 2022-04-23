@@ -4,4 +4,11 @@
        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/beans_2_0.xsd"
        bean-discovery-mode="all">
+
+    <interceptors>
+        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorOne</class>
+        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorTwo</class>
+        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorThree</class>
+        <class>com.mber.study.javaee.husivm._14_InterceptorsBinding.InterceptorFour</class>
+    </interceptors>
 </beans>
