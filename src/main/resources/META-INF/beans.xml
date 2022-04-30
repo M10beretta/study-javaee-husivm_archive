@@ -5,14 +5,14 @@
                       http://xmlns.jcp.org/xml/ns/javaee/beans_2_0.xsd"
        bean-discovery-mode="all">
 
-    <interceptors>
+    <!--<interceptors>
         <class>com.mber.study.javaee.husivm._057_InterceptorsBinding.InterceptorOne</class>
         <class>com.mber.study.javaee.husivm._057_InterceptorsBinding.InterceptorTwo</class>
         <class>com.mber.study.javaee.husivm._057_InterceptorsBinding.InterceptorThree</class>
         <class>com.mber.study.javaee.husivm._057_InterceptorsBinding.InterceptorFour</class>
-    </interceptors>
-    <decorators>
+    </interceptors>-->
+    <!--<decorators>
         <class>com.mber.study.javaee.husivm._058_Decorator.MyDecorator</class>
-    </decorators>
+    </decorators>-->
 
 </beans>
