@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("56")
+@WebServlet("056")
 public class Servlet extends HttpServlet {
     @Inject
     InterceptorService service;

@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Не работает с jsp если разместить MyBean.class в этом же файле, т.к. для jsp класс бина должен быть public
  */
-@WebServlet("53")
+@WebServlet("053")
 public class Servlet extends HttpServlet {
     @Inject
     private MyBean myBean;

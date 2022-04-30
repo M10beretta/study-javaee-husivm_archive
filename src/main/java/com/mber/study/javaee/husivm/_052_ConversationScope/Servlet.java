@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.Serializable;
 
-@WebServlet("52")
+@WebServlet("052")
 public class Servlet extends HttpServlet {
     @Inject
     private ConversationBean bean;
