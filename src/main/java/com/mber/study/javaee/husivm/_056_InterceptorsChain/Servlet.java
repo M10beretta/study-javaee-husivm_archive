@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._13_InterceptorsChain;
+package com.mber.study.javaee.husivm._056_InterceptorsChain;
 
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("13")
+@WebServlet("56")
 public class Servlet extends HttpServlet {
     @Inject
     InterceptorService service;

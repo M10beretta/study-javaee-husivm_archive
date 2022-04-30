@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._16_BeanEvents;
+package com.mber.study.javaee.husivm._059_BeanEvents;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +23,7 @@ import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.PARAMETER;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-@WebServlet("16")
+@WebServlet("59")
 public class Servlet extends HttpServlet {
     @Inject
     private BookService service;

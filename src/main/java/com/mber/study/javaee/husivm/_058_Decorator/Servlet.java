@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._15_Decorator;
+package com.mber.study.javaee.husivm._058_Decorator;
 
 import javax.decorator.Decorator;
 import javax.decorator.Delegate;
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("15")
+@WebServlet("58")
 public class Servlet extends HttpServlet {
     @Inject
     private Parent parent;

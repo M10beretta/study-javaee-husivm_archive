@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._18_Specialise;
+package com.mber.study.javaee.husivm._061_Specialise;
 
 import javax.enterprise.inject.Specializes;
 import javax.inject.Inject;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("18")
+@WebServlet("61")
 public class Servlet extends HttpServlet {
     @Inject
     private A a;

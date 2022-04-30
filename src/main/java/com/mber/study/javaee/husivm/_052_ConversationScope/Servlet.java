@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._09_ConversationScope;
+package com.mber.study.javaee.husivm._052_ConversationScope;
 
 import javax.enterprise.context.Conversation;
 import javax.enterprise.context.ConversationScoped;
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.Serializable;
 
-@WebServlet("9")
+@WebServlet("52")
 public class Servlet extends HttpServlet {
     @Inject
     private ConversationBean bean;

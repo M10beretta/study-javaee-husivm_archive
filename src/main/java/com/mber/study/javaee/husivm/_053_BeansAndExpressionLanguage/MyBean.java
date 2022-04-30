@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._10_BeansAndExpressionLanguage;
+package com.mber.study.javaee.husivm._053_BeansAndExpressionLanguage;
 
 import lombok.Getter;
 

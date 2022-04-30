@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._11_LiveCycleBean;
+package com.mber.study.javaee.husivm._054_LiveCycleBean;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("11")
+@WebServlet("54")
 public class Servlet extends HttpServlet {
     @Inject
     private LiveCycleBean liveCycleBean;

@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._14_InterceptorsBinding;
+package com.mber.study.javaee.husivm._057_InterceptorsBinding;
 
 
 import javax.inject.Inject;
@@ -18,7 +18,7 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 
-@WebServlet("14")
+@WebServlet("57")
 public class Servlet extends HttpServlet {
     @Inject
     InterceptorService service;

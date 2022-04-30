@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._19_Threads_pool_and_competition;
+package com.mber.study.javaee.husivm._062_Threads_pool_and_competition;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ForkJoinPool;
 import java.util.stream.IntStream;
 
-@WebServlet("19")
+@WebServlet("62")
 public class Servlet extends HttpServlet {
     private final ExecutorService executorService = new ForkJoinPool();
 

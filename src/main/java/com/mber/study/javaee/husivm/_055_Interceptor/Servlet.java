@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._12_Interceptor;
+package com.mber.study.javaee.husivm._055_Interceptor;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("12")
+@WebServlet("55")
 public class Servlet extends HttpServlet {
     @Inject
     private LiveCycleBean liveCycleBean;
