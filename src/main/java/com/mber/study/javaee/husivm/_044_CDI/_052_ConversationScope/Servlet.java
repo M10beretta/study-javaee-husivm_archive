@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._052_ConversationScope;
+package com.mber.study.javaee.husivm._044_CDI._052_ConversationScope;
 
 import javax.enterprise.context.Conversation;
 import javax.enterprise.context.ConversationScoped;

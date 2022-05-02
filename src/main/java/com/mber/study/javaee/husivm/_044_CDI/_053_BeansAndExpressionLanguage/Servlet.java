@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._053_BeansAndExpressionLanguage;
+package com.mber.study.javaee.husivm._044_CDI._053_BeansAndExpressionLanguage;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;

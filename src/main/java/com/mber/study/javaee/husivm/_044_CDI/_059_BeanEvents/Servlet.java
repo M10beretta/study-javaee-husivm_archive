@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._059_BeanEvents;
+package com.mber.study.javaee.husivm._044_CDI._059_BeanEvents;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

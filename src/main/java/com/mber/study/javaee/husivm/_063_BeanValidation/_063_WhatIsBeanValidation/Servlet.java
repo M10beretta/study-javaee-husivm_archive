@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._063_BeanValidation;
+package com.mber.study.javaee.husivm._063_BeanValidation._063_WhatIsBeanValidation;
 
 import lombok.Getter;
 import lombok.Setter;

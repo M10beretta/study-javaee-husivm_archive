@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._056_InterceptorsChain;
+package com.mber.study.javaee.husivm._044_CDI._056_InterceptorsChain;
 
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;

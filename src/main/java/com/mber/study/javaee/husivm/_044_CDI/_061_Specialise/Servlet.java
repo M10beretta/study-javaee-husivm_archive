@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._061_Specialise;
+package com.mber.study.javaee.husivm._044_CDI._061_Specialise;
 
 import javax.enterprise.inject.Specializes;
 import javax.inject.Inject;

@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._058_Decorator;
+package com.mber.study.javaee.husivm._044_CDI._058_Decorator;
 
 import javax.decorator.Decorator;
 import javax.decorator.Delegate;

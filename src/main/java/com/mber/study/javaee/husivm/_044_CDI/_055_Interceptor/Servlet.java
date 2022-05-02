@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._055_Interceptor;
+package com.mber.study.javaee.husivm._044_CDI._055_Interceptor;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;

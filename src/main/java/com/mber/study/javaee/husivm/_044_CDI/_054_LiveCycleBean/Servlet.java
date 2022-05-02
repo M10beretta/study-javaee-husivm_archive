@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._054_LiveCycleBean;
+package com.mber.study.javaee.husivm._044_CDI._054_LiveCycleBean;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._057_InterceptorsBinding;
+package com.mber.study.javaee.husivm._044_CDI._057_InterceptorsBinding;
 
 
 import javax.inject.Inject;

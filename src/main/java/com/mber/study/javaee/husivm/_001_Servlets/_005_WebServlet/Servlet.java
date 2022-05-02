@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._005_WebServlet;
+package com.mber.study.javaee.husivm._001_Servlets._005_WebServlet;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

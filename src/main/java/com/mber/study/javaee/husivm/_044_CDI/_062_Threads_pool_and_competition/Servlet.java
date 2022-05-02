@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._062_Threads_pool_and_competition;
+package com.mber.study.javaee.husivm._044_CDI._062_Threads_pool_and_competition;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

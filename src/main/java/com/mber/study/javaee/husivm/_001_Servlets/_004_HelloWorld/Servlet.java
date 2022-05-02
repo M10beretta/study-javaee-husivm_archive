@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._004_HelloWorld;
+package com.mber.study.javaee.husivm._001_Servlets._004_HelloWorld;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
