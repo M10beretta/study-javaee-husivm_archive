@@ -1,6 +1,5 @@
 package com.mber.study.javaee.husivm._001_Servlets._007_ServletsAndMultithreading;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -9,6 +8,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.Executors;
 import java.util.stream.IntStream;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Disabled
 class ServletTest {
@@ -25,7 +26,7 @@ class ServletTest {
         IntStream.range(0, 2).forEach(i -> executorService.submit(this::connect));
         executorService.shutdown();
         Thread.sleep(100);
-        Assertions.assertTrue(success);
+        assertTrue(success);
     }
 
     private void connect() {

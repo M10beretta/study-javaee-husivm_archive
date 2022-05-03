@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._001_Servlets._008_UrlParameters;
+package com.mber.study.javaee.husivm._001_Servlets._010_Headers;
 
 import com.mber.study.javaee.husivm._001_Servlets.TestUtil;
 import org.junit.jupiter.api.Disabled;
@@ -11,7 +11,7 @@ class ServletTest {
 
     @Test
     public void run() {
-        assertTrue(TestUtil.connect("008?one=A&two=B&four=D&four=E"));
+        assertTrue(TestUtil.connect("010"));
     }
-}
 
+}
