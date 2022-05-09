@@ -5,6 +5,9 @@
                       http://xmlns.jcp.org/xml/ns/javaee/beans_2_0.xsd"
        bean-discovery-mode="all">
 
+    <alternatives>
+        <class>com.mber.study.javaee.husivm._044_CDI._047_Alternatives.Student</class>
+    </alternatives>
     <interceptors>
         <class>com.mber.study.javaee.husivm._044_CDI._057_InterceptorsBinding.InterceptorOne</class>
         <class>com.mber.study.javaee.husivm._044_CDI._057_InterceptorsBinding.InterceptorTwo</class>
