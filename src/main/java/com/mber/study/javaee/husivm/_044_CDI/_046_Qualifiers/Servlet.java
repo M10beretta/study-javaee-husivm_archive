@@ -1,7 +1,6 @@
 package com.mber.study.javaee.husivm._044_CDI._046_Qualifiers;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.jetbrains.annotations.NotNull;
@@ -17,11 +16,11 @@ import java.io.IOException;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import static java.lang.annotation.ElementType.*;
+import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @WebServlet("046")
-@NoArgsConstructor
 public class Servlet extends HttpServlet {
     @Inject
     @StudentAnnotation

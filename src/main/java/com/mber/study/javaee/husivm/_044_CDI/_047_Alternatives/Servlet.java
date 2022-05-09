@@ -1,7 +1,6 @@
 package com.mber.study.javaee.husivm._044_CDI._047_Alternatives;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.jetbrains.annotations.NotNull;
@@ -16,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("047")
-@NoArgsConstructor
 public class Servlet extends HttpServlet {
     @Inject
     private Person person;
@@ -24,7 +22,7 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, @NotNull HttpServletResponse resp) throws ServletException, IOException {
         person.setName("Mike");
-        resp.getWriter().write(String.format("personS: %s", person));
+        resp.getWriter().write(String.format("person: %s", person));
     }
 }
 
