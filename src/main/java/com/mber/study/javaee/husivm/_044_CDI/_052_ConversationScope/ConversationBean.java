@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._044_CDI._052_ConversationScope_fail;
+package com.mber.study.javaee.husivm._044_CDI._052_ConversationScope;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,8 +10,8 @@ import java.io.Serializable;
 
 @ConversationScoped
 public class ConversationBean implements Serializable {
-    String state;
-    private @Getter @Setter String st;
+    String stF;
+    private @Getter @Setter String stS;
 
     @Inject
     private Conversation conversation;
@@ -19,17 +19,17 @@ public class ConversationBean implements Serializable {
     public void startConversation() {
         System.out.println("inside , ______________________startConversation() begin");
         printInsideStates();
-        conversation.begin("1");
+        conversation.begin();
         System.out.println("inside , conversation.begin()");
-        state = "B";
-        st = "B";
-        System.out.println("inside , set state - B");
+        stF = "B";
+        stS = "B";
+        System.out.println("inside , set states - B");
         System.out.println("inside , ______________________startConversation() end");
     }
 
     public void printInsideStates() {
-        System.out.printf("inside , state: %s%n", state);
-        System.out.printf("inside , st   : %s%n", st);
+        System.out.printf("inside , stF: %s%n", stF);
+        System.out.printf("inside , stS: %s%n", stS);
     }
 
     public void endConversation() {

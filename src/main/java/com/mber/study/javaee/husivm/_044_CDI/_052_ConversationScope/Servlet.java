@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._044_CDI._052_ConversationScope_fail;
+package com.mber.study.javaee.husivm._044_CDI._052_ConversationScope;
 
 import javax.inject.Inject;
 import javax.servlet.annotation.WebServlet;
@@ -34,9 +34,9 @@ public class Servlet extends HttpServlet {
 
 
     private void initBean(String s) {
-        bean.state = s;
-        bean.setSt(s);
-        System.out.println("outside, set state - " + s);
+        bean.stF = s;
+        bean.setStS(s);
+        System.out.println("outside, set states - " + s);
     }
 
     private void printOutsideAndInsideStates() {
@@ -45,8 +45,8 @@ public class Servlet extends HttpServlet {
     }
 
     private void printOutsideStates() {
-        System.out.printf("outside, state: %s%n", bean.state);
-        System.out.printf("outside,    st: %s%n", bean.getSt());
+        System.out.printf("outside, stF: %s%n", bean.stF);
+        System.out.printf("outside, stS: %s%n", bean.getStS());
     }
 }
 
