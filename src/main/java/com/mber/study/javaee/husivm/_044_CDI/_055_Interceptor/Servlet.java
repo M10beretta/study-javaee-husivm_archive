@@ -2,10 +2,7 @@ package com.mber.study.javaee.husivm._044_CDI._055_Interceptor;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.interceptor.AroundConstruct;
-import javax.interceptor.AroundInvoke;
-import javax.interceptor.Interceptors;
-import javax.interceptor.InvocationContext;
+import javax.interceptor.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,9 +15,9 @@ public class Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        liveCycleBean.method1();
-        liveCycleBean.method2();
-        liveCycleBean.method3();
+        liveCycleBean.methodA();
+        liveCycleBean.methodB();
+        liveCycleBean.methodC();
     }
 }
 
@@ -44,23 +41,23 @@ class MyInterceptor {
     }
 }
 
-// @Interceptors(MyInterceptor.class)
+//@Interceptors(MyInterceptor.class)
 class LiveCycleBean {
     public LiveCycleBean() {
         System.out.println("constructor");
     }
 
-    public void method1() {
-        System.out.println("method1");
+    public void methodA() {
+        System.out.println("methodA");
     }
 
-    // @ExcludeClassInterceptors
-    public void method2() {
-        System.out.println("method2");
+//    @ExcludeClassInterceptors
+    public void methodB() {
+        System.out.println("methodB");
     }
 
     @Interceptors(MyInterceptor.class)
-    public void method3() {
-        System.out.println("method3");
+    public void methodC() {
+        System.out.println("methodC");
     }
 }

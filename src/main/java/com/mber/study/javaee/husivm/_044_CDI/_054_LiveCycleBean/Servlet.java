@@ -17,38 +17,37 @@ public class Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        liveCycleBean.method1();
-        liveCycleBean.method2();
+        liveCycleBean.methodA();
+        liveCycleBean.methodB();
     }
 }
 
 class LiveCycleBean {
-
     public LiveCycleBean() {
-        System.out.println("constructor");          // 1
+        System.out.println("1 constructor");
     }
 
     @PostConstruct
     private void postConstruct() {
-        System.out.println("after construct");      // 2
+        System.out.println("2 after construct");
     }
 
     @AroundInvoke
     private Object aroundInvoke(InvocationContext context) throws Exception {
-        System.out.println("before method");        // 3, 5
+        System.out.println("3,5 before method");
         return context.proceed();
     }
 
-    public void method1() {
-        System.out.println("method1");              // 4
+    public void methodA() {
+        System.out.println("4 methodA");
     }
 
-    public void method2() {
-        System.out.println("method2");              // 6
+    public void methodB() {
+        System.out.println("6 methodB");
     }
 
     @PreDestroy
     private void preDestroy() {
-        System.out.println("before destroy");        // 7
+        System.out.println("7 before destroy");
     }
 }

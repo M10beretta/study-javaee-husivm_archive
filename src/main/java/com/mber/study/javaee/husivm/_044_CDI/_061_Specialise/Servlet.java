@@ -11,27 +11,26 @@ import javax.servlet.http.HttpServletResponse;
 public class Servlet extends HttpServlet {
     @Inject
     private A a;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         a.print();
     }
 }
 
-interface A{
+interface A {
     void print();
 }
 
-class B implements A{
+class B implements A {
     @Override
     public void print() {
         System.out.println("B");
-
-
     }
 }
 
 @Specializes
-class C extends B{
+class C extends B {
     @Override
     public void print() {
         System.out.println("C");
