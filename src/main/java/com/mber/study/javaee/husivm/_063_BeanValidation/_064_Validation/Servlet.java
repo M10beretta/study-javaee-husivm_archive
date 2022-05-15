@@ -41,7 +41,7 @@ public class Servlet extends HttpServlet {
         checkValidation(valueA, "name Tom");
         checkValidation(valueB, "name Hank Moody");
 
-        //<editor-fold desc="fail">
+        //<editor-fold desc="fail to NotNull">
         try {
             var setName = Person.class.getMethod("setName", String.class);
             var executableValidator = validator.forExecutables();
@@ -83,7 +83,7 @@ class Person {
     @Min(18)
     private int age;
 
-    //<editor-fold desc="fail">
+    //<editor-fold desc="fail to NotNull">
     @NotNull
     public String getName() {
         return name;
