@@ -28,7 +28,7 @@ public class Servlet extends HttpServlet {
 class Person {
     @NotNull
     @Pattern.List({
-            @Pattern(regexp = "[A-Z][a-z]"),
+            @Pattern(regexp = "[a-zA-Z]+"),
             @Pattern(regexp = "")})
     private String name;
     @Min(18)
