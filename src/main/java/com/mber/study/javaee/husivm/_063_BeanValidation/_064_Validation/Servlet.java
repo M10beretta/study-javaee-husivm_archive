@@ -9,16 +9,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import java.util.Set;
+
+import static com.mber.study.javaee.husivm._063_BeanValidation.ValidationUtil.*;
 
 @WebServlet("064")
 public class Servlet extends HttpServlet {
-
     @Inject
     private Person person;
 
@@ -57,20 +56,6 @@ public class Servlet extends HttpServlet {
         //</editor-fold>
 
         validatorFactory.close();
-    }
-
-
-    private void checkValidation(Set<ConstraintViolation<Person>> validate, String prefix) {
-        if (!validate.isEmpty()) {
-            System.out.printf("%s not valid, size - %s%n", prefix, validate.size());
-        } else {
-            System.out.printf("%s is valid%n", prefix);
-        }
-        validate.forEach(x -> System.out.printf("""
-                Message: %s
-                InvalidValue: %s
-                """, x.getMessage(), x.getInvalidValue()));
-        System.out.println("------------------");
     }
 }
 
