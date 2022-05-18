@@ -1,6 +1,5 @@
 package com.mber.study.javaee.husivm._063_BeanValidation;
 
-
 import lombok.experimental.UtilityClass;
 import org.jetbrains.annotations.NotNull;
 
@@ -10,7 +9,7 @@ import java.util.Set;
 @UtilityClass
 public class ValidationUtil {
 
-    public <T extends ConstraintViolation<?>> void checkValidation(@NotNull Set<T> validate, String prefix) {
+    public static <T extends ConstraintViolation<?>> void checkValidation(@NotNull Set<T> validate, String prefix) {
         if (!validate.isEmpty()) {
             System.out.printf("%s not valid, size - %s%n", prefix, validate.size());
         } else {
@@ -23,7 +22,7 @@ public class ValidationUtil {
         System.out.println("------------------");
     }
 
-    public <T extends ConstraintViolation<?>> void checkValidation(Set<T> validate) {
+    public static <T extends ConstraintViolation<?>> void checkValidation(Set<T> validate) {
         checkValidation(validate, "");
     }
 }
