@@ -13,5 +13,4 @@ class ServletTest {
     public void run() {
         assertTrue(TestUtil.connect("010"));
     }
-
 }

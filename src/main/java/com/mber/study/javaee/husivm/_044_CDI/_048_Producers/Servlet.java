@@ -1,6 +1,6 @@
 package com.mber.study.javaee.husivm._044_CDI._048_Producers;
 
-import org.jetbrains.annotations.NotNull;
+import lombok.NonNull;
 
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
@@ -32,7 +32,7 @@ public class Servlet extends HttpServlet {
     private Car car;
 
     @Override
-    protected void doGet(HttpServletRequest req, @NotNull HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, @NonNull HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().write(String.format("""
                 A: %s
                 B: %s

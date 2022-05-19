@@ -1,6 +1,6 @@
 package com.mber.study.javaee.husivm._001_Servlets._013_Cookies;
 
-import org.jetbrains.annotations.NotNull;
+import lombok.NonNull;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +15,7 @@ import java.util.Objects;
 @WebServlet("013")
 public class Servlet extends HttpServlet {
     @Override
-    protected void doGet(@NotNull HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(@NonNull HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var cookies = req.getCookies();
         if (Objects.nonNull(cookies)) {
             Arrays.stream(cookies).forEach(x -> System.out.printf("""

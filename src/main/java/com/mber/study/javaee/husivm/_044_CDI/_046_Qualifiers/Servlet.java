@@ -1,9 +1,9 @@
 package com.mber.study.javaee.husivm._044_CDI._046_Qualifiers;
 
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
-import org.jetbrains.annotations.NotNull;
 
 import javax.inject.Inject;
 import javax.inject.Qualifier;
@@ -30,7 +30,7 @@ public class Servlet extends HttpServlet {
 
 
     @Override
-    protected void doGet(HttpServletRequest req, @NotNull HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, @NonNull HttpServletResponse resp) throws ServletException, IOException {
         personS.setName("Mike");
         resp.getWriter().write(String.format("""
                 personS: %s

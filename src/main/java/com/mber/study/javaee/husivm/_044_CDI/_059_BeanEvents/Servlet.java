@@ -2,7 +2,7 @@ package com.mber.study.javaee.husivm._044_CDI._059_BeanEvents;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.jetbrains.annotations.NotNull;
+import lombok.NonNull;
 
 import javax.enterprise.event.Event;
 import javax.enterprise.event.Observes;
@@ -31,7 +31,7 @@ public class Servlet extends HttpServlet {
     Subscriber subscriber;
 
     @Override
-    protected void doGet(HttpServletRequest req, @NotNull HttpServletResponse resp) throws IOException {
+    protected void doGet(HttpServletRequest req, @NonNull HttpServletResponse resp) throws IOException {
         var one = new Book("one");
         var two = new Book("two");
         var three = new Book("three");
@@ -66,12 +66,12 @@ class BookService {
     @Inject @Remove
     private Event<Book> removeEvent;
 
-    public void addBook(@NotNull Book book) {
+    public void addBook(@NonNull Book book) {
         System.out.println(book.getName() + " book was added");
         addEvent.fire(book);
     }
 
-    public void removeBook(@NotNull Book book) {
+    public void removeBook(@NonNull Book book) {
         System.out.println(book.getName() + " book was deleted");
         removeEvent.fire(book);
     }
@@ -81,7 +81,7 @@ class BookService {
 class Subscriber {
     private final @Getter List<Book> list = new ArrayList<>();
 
-    public void add(@Observes @Add @NotNull Book book) {
+    public void add(@Observes @Add @NonNull Book book) {
         list.add(book);
         System.out.println(book.getName() + " added to list");
     }

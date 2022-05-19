@@ -1,10 +1,6 @@
 package com.mber.study.javaee.husivm._044_CDI._045_IocAndDependencyInjection;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import org.jetbrains.annotations.NotNull;
+import lombok.*;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -35,7 +31,7 @@ public class Servlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, @NotNull HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, @NonNull HttpServletResponse resp) throws ServletException, IOException {
         studentF.setName("Mike");
         studentC.setName("Elen");
         resp.getWriter().write(String.format("""

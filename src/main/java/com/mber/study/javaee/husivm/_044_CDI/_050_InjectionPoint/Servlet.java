@@ -1,6 +1,6 @@
 package com.mber.study.javaee.husivm._044_CDI._050_InjectionPoint;
 
-import org.jetbrains.annotations.NotNull;
+import lombok.NonNull;
 
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
@@ -20,7 +20,7 @@ public class Servlet extends HttpServlet {
     private Logger log;
 
     @Override
-    protected void doGet(HttpServletRequest req, @NotNull HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, @NonNull HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().write(log.getName());
         log.log(Level.INFO, log.getName());
     }

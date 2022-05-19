@@ -1,8 +1,8 @@
 package com.mber.study.javaee.husivm._044_CDI._049_Disposes;
 
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
-import org.jetbrains.annotations.NotNull;
 
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
@@ -20,7 +20,7 @@ public class Servlet extends HttpServlet {
     private Car car;
 
     @Override
-    protected void doGet(HttpServletRequest req, @NotNull HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, @NonNull HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().write(String.format("car: %s", car));
     }
 }
@@ -31,7 +31,7 @@ class Producer {
         return new Car("Mazda");
     }
 
-    public void clean(@Disposes @NotNull Car car){
+    public void clean(@Disposes @NonNull Car car){
         car.clean();
     }
 }

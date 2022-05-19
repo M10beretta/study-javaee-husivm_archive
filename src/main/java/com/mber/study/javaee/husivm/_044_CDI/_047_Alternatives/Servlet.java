@@ -1,9 +1,9 @@
 package com.mber.study.javaee.husivm._044_CDI._047_Alternatives;
 
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
-import org.jetbrains.annotations.NotNull;
 
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
@@ -20,7 +20,7 @@ public class Servlet extends HttpServlet {
     private Person person;
 
     @Override
-    protected void doGet(HttpServletRequest req, @NotNull HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, @NonNull HttpServletResponse resp) throws ServletException, IOException {
         person.setName("Mike");
         resp.getWriter().write(String.format("person: %s", person));
     }

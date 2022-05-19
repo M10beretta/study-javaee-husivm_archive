@@ -1,9 +1,9 @@
 package com.mber.study.javaee.husivm._063_BeanValidation._067_ValidationOfClasses;
 
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
-import org.jetbrains.annotations.NotNull;
 
 import javax.inject.Inject;
 import javax.servlet.annotation.WebServlet;
@@ -40,7 +40,7 @@ public class Servlet extends HttpServlet {
         checkValidation(validator.validate(hank), mike.toString());
     }
 
-    private void constructPerson(@NotNull Person mike, LocalDate dateA, LocalDate dateB) {
+    private void constructPerson(@NonNull Person mike, LocalDate dateA, LocalDate dateB) {
         mike.setBirthDate(dateA);
         mike.setDeathDate(dateB);
     }
@@ -73,7 +73,7 @@ class CheckChronologicalDates implements ConstraintValidator<ChronDates, Person>
     }
 
     @Override
-    public boolean isValid(@NotNull Person person, ConstraintValidatorContext context) {
+    public boolean isValid(@NonNull Person person, ConstraintValidatorContext context) {
         return person.getBirthDate().isBefore(person.getDeathDate());
     }
 }

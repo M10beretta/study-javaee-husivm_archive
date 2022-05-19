@@ -2,6 +2,7 @@ package com.mber.study.javaee.husivm._063_BeanValidation._066_CustomValidator;
 
 import com.mber.study.javaee.husivm._063_BeanValidation.ValidationUtil;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 
 import javax.inject.Inject;
@@ -108,7 +109,7 @@ class CheckSiteLogic implements ConstraintValidator<CheckSiteUrl, String> {
     }
 
     @Override
-    public void initialize(CheckSiteUrl constraintAnnotation) {
+    public void initialize(@NonNull CheckSiteUrl constraintAnnotation) {
         protocol = constraintAnnotation.protocol();
         host = constraintAnnotation.host();
         port = constraintAnnotation.port();

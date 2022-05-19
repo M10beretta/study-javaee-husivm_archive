@@ -1,8 +1,8 @@
 package com.mber.study.javaee.husivm._044_CDI._051_BeanScopes;
 
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
 
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
@@ -21,7 +21,7 @@ public class Servlet extends HttpServlet {
     private ChangeMyBean change;
 
     @Override
-    protected void doGet(HttpServletRequest req, @NotNull HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, @NonNull HttpServletResponse resp) throws ServletException, IOException {
         bean.setI(5);
         change.changeI();
         resp.getWriter().write("i: " + bean.getI());
