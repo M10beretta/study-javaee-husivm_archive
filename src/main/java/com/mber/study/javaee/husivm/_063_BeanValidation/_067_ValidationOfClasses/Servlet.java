@@ -36,8 +36,8 @@ public class Servlet extends HttpServlet {
         constructPerson(mike, dateA, dateB);
         constructPerson(hank, dateB, dateA);
 
-        checkValidation(validator.validate(mike));
-        checkValidation(validator.validate(hank));
+        checkValidation(validator.validate(mike), mike.toString());
+        checkValidation(validator.validate(hank), mike.toString());
     }
 
     private void constructPerson(@NotNull Person mike, LocalDate dateA, LocalDate dateB) {
