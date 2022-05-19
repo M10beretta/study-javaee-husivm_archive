@@ -52,7 +52,7 @@ class Person {
     private String siteD;
 }
 
-@Constraint(validatedBy = {CheckSiteLogic.class})
+@Constraint(validatedBy = CheckSiteLogic.class)
 @Target(FIELD)
 @Retention(RUNTIME)
 @interface CheckSiteUrl {
