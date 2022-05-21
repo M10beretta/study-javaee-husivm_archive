@@ -18,13 +18,11 @@ import static com.mber.study.javaee.husivm._063_BeanValidation.ValidationUtil.ch
 public class Servlet extends HttpServlet {
     @Inject
     private Validator validator;
-    @Inject
-    private Child child;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        checkValidation(validator.validateValue(Person.class, "name", "Mike"));
-        checkValidation(validator.validateValue(Person.class, "name", null));
+        checkValidation(validator.validateValue(Child.class, "name", "Mike"));
+        checkValidation(validator.validateValue(Child.class, "name", null));
     }
 }
 

@@ -89,23 +89,23 @@ class CheckSiteLogic implements ConstraintValidator<CheckSiteUrl, String> {
             return false;
         }
 
-        boolean isValid = true;
+        boolean valid = true;
         if (!stringIsNullOrEmpty(protocol) && !protocol.equals(url.getProtocol())) {
             context.disableDefaultConstraintViolation();
             context.buildConstraintViolationWithTemplate("Protocol invalid").addConstraintViolation();
-            isValid= false;
+            valid = false;
         }
         if (!stringIsNullOrEmpty(host) && !host.equals(url.getHost())) {
             context.disableDefaultConstraintViolation();
             context.buildConstraintViolationWithTemplate("Host invalid").addConstraintViolation();
-            isValid= false;
+            valid = false;
         }
         if (port != -1 && port != url.getPort()) {
             context.disableDefaultConstraintViolation();
             context.buildConstraintViolationWithTemplate("Port invalid").addConstraintViolation();
-            isValid= false;
+            valid = false;
         }
-        return isValid;
+        return valid;
     }
 
     @Override

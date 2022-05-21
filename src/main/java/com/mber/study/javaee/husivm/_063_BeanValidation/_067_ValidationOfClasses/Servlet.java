@@ -68,11 +68,6 @@ class Person {
 
 class CheckChronologicalDates implements ConstraintValidator<ChronDates, Person> {
     @Override
-    public void initialize(ChronDates constraintAnnotation) {
-        ConstraintValidator.super.initialize(constraintAnnotation);
-    }
-
-    @Override
     public boolean isValid(@NonNull Person person, ConstraintValidatorContext context) {
         return person.getBirthDate().isBefore(person.getDeathDate());
     }
