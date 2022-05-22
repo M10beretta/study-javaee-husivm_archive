@@ -1,6 +1,7 @@
 package com.mber.study.javaee.husivm._063_BeanValidation;
 
 import lombok.experimental.UtilityClass;
+import org.jetbrains.annotations.Contract;
 
 import javax.validation.ConstraintViolation;
 import java.util.Objects;
@@ -13,32 +14,40 @@ import java.util.stream.Collectors;
 public class ValidationUtil {
 
     public static <T extends ConstraintViolation<?>> void checkValidation(Set<T> validate, String prefix) {
+        var sb = new StringBuilder();
+
         if (Objects.isNull(validate) || validate.isEmpty()) {
-            System.out.printf("%nIs valid:  %s%n", prefix);
-            return;
+            sb.append(String.format("Is valid:  %s%n", prefix));
+        } else {
+            var errorMessages = validate.stream()
+                    .map(ValidationUtil::getValidationMessage)
+                    .collect(Collectors.joining("\n"));
+
+            var notValidClasses = validate.stream()
+                    .map(x -> x.getRootBeanClass())
+                    .map(Class::getName)
+                    .distinct()
+                    .map(ValidationUtil::cutClassName)
+                    .filter(StringUtil::stringNotNullOrEmpty)
+                    .toList();
+
+            sb.append(String.format("""
+                            %s
+                            %s
+                            %s
+                            """,
+                    String.format("Not valid: %s (%s)", prefix, validate.size()),
+                    errorMessages,
+                    String.format("\s\sclasses: %s", notValidClasses)));
         }
-
-        var notValidClasses = validate.stream()
-                .map(x -> x.getRootBeanClass())
-                .map(Class::getName)
-                .distinct()
-                .map(ValidationUtil::cutClassName)
-                .filter(StringUtil::stringNotNullOrEmpty)
-                .toList();
-
-        var errorMessages = validate.stream()
-                .map(ValidationUtil::getValidationMessage)
-                .collect(Collectors.joining(""));
-
-        System.out.println(String.format("%nNot valid: %s (%s)%n", prefix, validate.size())
-                           + errorMessages
-                           + String.format("  classes: %s", notValidClasses));
+        System.out.println(sb);
     }
 
     public static <T extends ConstraintViolation<?>> void checkValidation(Set<T> validate) {
         checkValidation(validate, "<noname>");
     }
 
+    @Contract("_ -> !null")
     private static String cutClassName(String className) {
         return Pattern.compile("[\\w]+.[\\w]+$")
                 .matcher(className)
@@ -50,9 +59,8 @@ public class ValidationUtil {
 
     private static String getValidationMessage(ConstraintViolation<?> x) {
         return String.format("""
-                  message: %s
-                  value:   %s
-                """, x.getMessage(), x.getInvalidValue());
+                \s\smessage: %s
+                \s\svalue:   %s""", x.getMessage(), x.getInvalidValue());
     }
 }
 

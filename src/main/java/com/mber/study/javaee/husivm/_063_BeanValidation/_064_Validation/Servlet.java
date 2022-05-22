@@ -1,10 +1,8 @@
 package com.mber.study.javaee.husivm._063_BeanValidation._064_Validation;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
 import lombok.ToString;
 
-import javax.inject.Inject;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,53 +12,32 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-import static com.mber.study.javaee.husivm._063_BeanValidation.ValidationUtil.*;
+import static com.mber.study.javaee.husivm._063_BeanValidation.ValidationUtil.checkValidation;
 
 @WebServlet("064")
 public class Servlet extends HttpServlet {
-    @Inject
-    private Person person;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        person.setName("Mike56");
-        person.setAge(12);
+        var person = Person.builder().name("Mike22").age(12).build();
 
         var validatorFactory = Validation.buildDefaultValidatorFactory();
         var validator = validatorFactory.getValidator();
         var validate = validator.validate(person);
-
         checkValidation(validate, person.toString());
 
-        var name = validator.validateProperty(person, "name");
-        checkValidation(name, "person name");
+        checkValidation(validator.validateProperty(person, "name"), "property name " + person);
+        checkValidation(validator.validateValue(Person.class, "name", "Tom"), "name Tom");
+        checkValidation(validator.validateValue(Person.class, "name", "Hank Moody"), "name Hank Moody");
 
-        var valueA = validator.validateValue(Person.class, "name", "Tom");
-        var valueB = validator.validateValue(Person.class, "name", "Hank Moody");
-        checkValidation(valueA, "name Tom");
-        checkValidation(valueB, "name Hank Moody");
-
-        //<editor-fold desc="fail to NotNull">
-        try {
-            var setName = Person.class.getMethod("setName", String.class);
-            var executableValidator = validator.forExecutables();
-            var violations = executableValidator.validateParameters(Person.class, setName, new Object[]{null});
-            if (violations.isEmpty()) {
-                System.out.println("violations is empty");
-            } else {
-                System.out.println("violations isn't empty");
-            }
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }
-        //</editor-fold>
+        person.setName(null);
+        checkValidation(validator.validate(person), person.toString());
 
         validatorFactory.close();
     }
 }
 
-@Getter
-@Setter
+@Builder
 @ToString
 class Person {
     @Pattern(regexp = "^[A-Za-z]+$")
@@ -68,15 +45,12 @@ class Person {
     @Min(18)
     private int age;
 
-    //<editor-fold desc="fail to NotNull">
     @NotNull
     public String getName() {
         return name;
     }
 
-    public void setName(@NotNull String name) {
+    public void setName(@NotNull/*not used*/ String name) {
         this.name = name;
     }
-    //</editor-fold>
 }
-
