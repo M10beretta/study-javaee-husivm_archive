@@ -1,9 +1,6 @@
 package com.mber.study.javaee.husivm._063_BeanValidation._067_ValidationOfClasses;
 
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.inject.Inject;
 import javax.servlet.annotation.WebServlet;
@@ -23,32 +20,25 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 public class Servlet extends HttpServlet {
     @Inject
     private Validator validator;
-    @Inject
-    private Person mike;
-    @Inject
-    private Person hank;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        LocalDate dateA = LocalDate.of(2000, 1, 1);
-        LocalDate dateB = LocalDate.of(2070, 1, 1);
+        LocalDate dateBefore = LocalDate.of(2000, 1, 1);
+        LocalDate dateAfter = LocalDate.of(2070, 1, 1);
 
-        constructPerson(mike, dateA, dateB);
-        constructPerson(hank, dateB, dateA);
+        var personA = Person.builder().birthDate(dateBefore).deathDate(dateAfter).build();
+        var personB = Person.builder().birthDate(dateBefore).deathDate(dateBefore).build();
+        var personC = Person.builder().birthDate(dateAfter).deathDate(dateBefore).build();
 
-        checkValidation(validator.validate(mike), mike.toString());
-        checkValidation(validator.validate(hank), mike.toString());
-    }
-
-    private void constructPerson(@NonNull Person mike, LocalDate dateA, LocalDate dateB) {
-        mike.setBirthDate(dateA);
-        mike.setDeathDate(dateB);
+        checkValidation(validator.validate(personA), personA.toString());
+        checkValidation(validator.validate(personB), personB.toString());
+        checkValidation(validator.validate(personC), personC.toString());
     }
 }
 
 @ChronDates
+@Builder
 @Getter
-@Setter
 @ToString
 class Person {
     private LocalDate birthDate;
