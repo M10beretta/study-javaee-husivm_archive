@@ -1,21 +1,17 @@
-package com.mber.study.javaee.husivm._072_JPA;
+package com.mber.study.javaee.husivm._072_JPA._074_PersistenceXML;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 
-@Entity
-@Getter
+@Entity(name = "074_book")
 @NoArgsConstructor
 public class Book {
     @Id
     @GeneratedValue
     private Long id;
-    @Setter
     private String title;
 
     public Book(String title) {
