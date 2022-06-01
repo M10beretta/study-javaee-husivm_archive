@@ -6,16 +6,16 @@
        bean-discovery-mode="all">
 
     <alternatives>
-        <class>com.mber.study.javaee.husivm._044_CDI._047_Alternatives.Student</class>
+        <class>com.mber.study.javaee.husivm._044_cdi._047_alternatives.Student</class>
     </alternatives>
     <interceptors>
-        <class>com.mber.study.javaee.husivm._044_CDI._057_InterceptorsBinding.InterceptorOne</class>
-        <class>com.mber.study.javaee.husivm._044_CDI._057_InterceptorsBinding.InterceptorTwo</class>
-        <class>com.mber.study.javaee.husivm._044_CDI._057_InterceptorsBinding.InterceptorThree</class>
-        <class>com.mber.study.javaee.husivm._044_CDI._057_InterceptorsBinding.InterceptorFour</class>
+        <class>com.mber.study.javaee.husivm._044_cdi._057_interceptors_binding.InterceptorOne</class>
+        <class>com.mber.study.javaee.husivm._044_cdi._057_interceptors_binding.InterceptorTwo</class>
+        <class>com.mber.study.javaee.husivm._044_cdi._057_interceptors_binding.InterceptorThree</class>
+        <class>com.mber.study.javaee.husivm._044_cdi._057_interceptors_binding.InterceptorFour</class>
     </interceptors>
     <decorators>
-        <class>com.mber.study.javaee.husivm._044_CDI._058_Decorator.MyDecorator</class>
+        <class>com.mber.study.javaee.husivm._044_cdi._058_decorator.MyDecorator</class>
     </decorators>
 
 </beans>

@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>servletName</servlet-name>
-        <servlet-class>com.mber.study.javaee.husivm._001_Servlets._004_HelloWorld.Servlet</servlet-class>
+        <servlet-class>com.mber.study.javaee.husivm._001_servlets._004_hello_world.Servlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>servletName</servlet-name>
