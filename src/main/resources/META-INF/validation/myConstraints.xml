@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <constraint-mappings xmlns="http://jboss.org/xml/ns/javax/validation/mapping" version="1.1">
-    <bean class="com.mber.study.javaee.husivm._063_bean_validation._071_validation_through_xml.Person">
+    <bean class="com.mber.study.javaee.husivm._05_bean_validation._071_validation_through_xml.Person">
         <field name="name">
             <constraint annotation="javax.validation.constraints.NotNull">
                 <message>name should not be null</message>
