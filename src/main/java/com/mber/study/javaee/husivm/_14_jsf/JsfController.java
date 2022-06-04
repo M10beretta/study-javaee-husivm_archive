@@ -8,6 +8,9 @@ import javax.inject.Named;
 public class JsfController {
 
     public String on173() {
-        return "/14_jsf/173/hello_world.xhtml";
+        return "/14_jsf/173_hello_world/index.xhtml";
+    }
+    public String on174() {
+        return "/14_jsf/174_anatomy/index.xhtml";
     }
 }
