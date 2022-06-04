@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._06_jpa._080_embedable;
+package com.mber.study.javaee.husivm._06_jpa._081_embedable;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;
@@ -7,7 +7,7 @@ import lombok.*;
 
 import java.io.Serializable;
 
-@Entity(name = "080A_student")
+@Entity(name = "081A_student")
 @NoArgsConstructor
 public class StudentA {
 

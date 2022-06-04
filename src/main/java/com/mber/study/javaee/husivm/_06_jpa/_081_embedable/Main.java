@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._06_jpa._080_embedable;
+package com.mber.study.javaee.husivm._06_jpa._081_embedable;
 
 import com.mber.study.javaee.husivm._06_jpa.Repository;
 

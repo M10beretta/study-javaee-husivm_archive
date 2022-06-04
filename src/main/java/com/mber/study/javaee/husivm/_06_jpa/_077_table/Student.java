@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 
-@Entity
+@Entity(name = "077_student")
 @Table(name = "077_student")
 @NoArgsConstructor
 @SecondaryTables({@SecondaryTable(name = "077_contact"), @SecondaryTable(name = "077_address")})

@@ -1,4 +1,4 @@
-package com.mber.study.javaee.husivm._06_jpa._080_embedable;
+package com.mber.study.javaee.husivm._06_jpa._081_embedable;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 @IdClass(StudentBPK.class)
-@Entity(name = "080B_student")
+@Entity(name = "081B_student")
 @NoArgsConstructor
 public class StudentB {
     @Id
