@@ -12,6 +12,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <jta-data-source>java:/PostgresDS</jta-data-source>
 -->
+        <mapping-file>META-INF/studentMap.xml</mapping-file>
 
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>

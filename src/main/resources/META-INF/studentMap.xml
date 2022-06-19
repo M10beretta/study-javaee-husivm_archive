@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm" version="2.1">
+
+    <entity class="com.mber.study.javaee.husivm._06_jpa._089_how_to_map_with_xml.Student">
+        <table name="089_student"/>
+        <attributes>
+            <id name="id">
+                <column name="id" unique="true" nullable="false" column-definition=""/>
+            </id>
+            <basic name="name">
+                <column length="50"/>
+            </basic>
+        </attributes>
+    </entity>
+
+</entity-mappings>
