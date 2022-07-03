@@ -2,9 +2,11 @@ package com.mber.study.javaee.husivm._06_jpa;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import lombok.Getter;
 
 public class Repository implements AutoCloseable {
     private final EntityManagerFactory factory;
+    @Getter
     private final EntityManager manager;
 
     public Repository() {
