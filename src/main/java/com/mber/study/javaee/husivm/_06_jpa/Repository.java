@@ -7,28 +7,28 @@ import lombok.Getter;
 public class Repository implements AutoCloseable {
     private final EntityManagerFactory factory;
     @Getter
-    private final EntityManager manager;
+    private final EntityManager entityManager;
 
     public Repository() {
         this.factory = jakarta.persistence.Persistence.createEntityManagerFactory("default");
-        this.manager = factory.createEntityManager();
+        this.entityManager = factory.createEntityManager();
     }
 
     public void begin() {
-        manager.getTransaction().begin();
+        entityManager.getTransaction().begin();
     }
 
     public void persist(Object entity) {
-        manager.persist(entity);
+        entityManager.persist(entity);
     }
 
     public void commit() {
-        manager.getTransaction().commit();
+        entityManager.getTransaction().commit();
     }
 
     @Override
     public void close() {
-        manager.close();
+        entityManager.close();
         factory.close();
     }
 }
